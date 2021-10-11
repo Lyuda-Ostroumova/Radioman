@@ -19,43 +19,58 @@ public class Radio {
         currentStation = newCurrentStation;
     }
 
-    public void changeStationForward(int currentStation) {
-        if (currentStation >= 0 && currentStation < 9) {
-            this.currentStation = currentStation + 1;
-        }
+    public int changeStationForward() {
+        int newStation = currentStation + 1;
         if (currentStation == 9) {
-            this.currentStation = 0;
+            newStation = 0;
         }
+        return newStation;
     }
 
-    public void changeStationBackward(int currentStation) {
-        if (currentStation <= 9 && currentStation > 0) {
-            this.currentStation = currentStation - 1;
-        }
+    public int changeStationBackward() {
+        int newStation = currentStation - 1;
         if (currentStation == 0) {
-            this.currentStation = 9;
+            newStation = 9;
         }
+        return newStation;
     }
 
     public int getCurrentVolume() {
         return currentVolume;
     }
 
-    public void increaseVolume(int currentVolume) {
-        if (currentVolume < 10) {
-            this.currentVolume = currentVolume + 1;
+    public void setCurrentVolume(int newCurrentVolume) {
+        if (newCurrentVolume < 0) {
+            return;
         }
-        if (currentVolume == 10) {
-            this.currentVolume = 10;
+        if (newCurrentVolume > 10) {
+            return;
         }
+        currentVolume = newCurrentVolume;
     }
 
-    public void decreaseVolume(int currentVolume) {
+    public int increaseVolume() {
+        int newVolume = currentVolume;
+        if (currentVolume < 10) {
+            currentVolume = currentVolume + 1;
+        }
+        if (currentVolume == 10) {
+            currentVolume = 10;
+        }
+        return newVolume;
+
+    }
+
+    public int decreaseVolume() {
+        int newVolume = currentVolume;
         if (currentVolume > 0) {
-            this.currentVolume = currentVolume - 1;
+            currentVolume = currentVolume - 1;
         }
         if (currentVolume == 0) {
-            this.currentVolume = 0;
+            newVolume = 0;
         }
+        return newVolume;
+
     }
+
 }
