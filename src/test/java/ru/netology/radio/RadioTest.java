@@ -95,8 +95,6 @@ class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentStation(5);
 
-        radio.changeStationForward();
-
         int actual = radio.changeStationForward();
         int expected = 6;
 
@@ -134,7 +132,6 @@ class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentStation(5);
 
-        radio.changeStationBackward();
 
         int actual = radio.changeStationBackward();
         int expected = 4;
@@ -147,8 +144,6 @@ class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentStation(0);
 
-        radio.changeStationBackward();
-
         int actual = radio.changeStationBackward();
         int expected = 9;
 
@@ -160,8 +155,6 @@ class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentStation(9);
 
-        radio.changeStationBackward();
-
         int actual = radio.changeStationBackward();
         int expected = 8;
 
@@ -172,8 +165,6 @@ class RadioTest {
     void shouldIncreaseVolume() {
         Radio radio = new Radio();
         radio.setCurrentVolume(10);
-
-        radio.increaseVolume();
 
         int actual = radio.increaseVolume();
         int expected = 10;
@@ -234,8 +225,6 @@ class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentVolume(8);
 
-        radio.increaseVolume();
-
         int actual = radio.increaseVolume();
         int expected = 9;
 
@@ -274,8 +263,6 @@ class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentVolume(0);
 
-        radio.decreaseVolume();
-
         int actual = radio.decreaseVolume();
         int expected = 0;
 
@@ -286,8 +273,6 @@ class RadioTest {
     void shouldDecreaseVolume2() {
         Radio radio = new Radio();
         radio.setCurrentVolume(10);
-
-        radio.decreaseVolume();
 
         int actual = radio.decreaseVolume();
         int expected = 9;

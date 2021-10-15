@@ -24,6 +24,7 @@ public class Radio {
         if (currentStation == 9) {
             newStation = 0;
         }
+        currentStation = newStation;
         return newStation;
     }
 
@@ -32,7 +33,10 @@ public class Radio {
         if (currentStation == 0) {
             newStation = 9;
         }
+        currentStation = newStation;
         return newStation;
+
+
     }
 
     public int getCurrentVolume() {
@@ -50,25 +54,21 @@ public class Radio {
     }
 
     public int increaseVolume() {
-        int newVolume = currentVolume;
-        if (currentVolume < 10) {
-            currentVolume = currentVolume + 1;
-        }
+        int newVolume = currentVolume + 1;
         if (currentVolume == 10) {
             currentVolume = 10;
         }
+        currentVolume = newVolume;
         return newVolume;
 
     }
 
     public int decreaseVolume() {
-        int newVolume = currentVolume;
-        if (currentVolume > 0) {
-            currentVolume = currentVolume - 1;
-        }
+        int newVolume = currentVolume - 1;
         if (currentVolume == 0) {
             newVolume = 0;
         }
+        currentVolume = newVolume;
         return newVolume;
 
     }
