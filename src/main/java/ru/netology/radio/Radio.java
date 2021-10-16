@@ -56,7 +56,7 @@ public class Radio {
     public int increaseVolume() {
         int newVolume = currentVolume + 1;
         if (currentVolume == 10) {
-            currentVolume = 10;
+            newVolume = 10;
         }
         currentVolume = newVolume;
         return newVolume;
